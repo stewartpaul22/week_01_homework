@@ -1,0 +1,3 @@
+A gitignore file allows the user to specify patterns that will prevent untracked files from being added/tracked by Git, if they match any of the patterns.
+
+If a file is already being tracked then the gitignore file, even if it matches one of the patterns, it will still be tracked.  To stop tracking such files use the command 'git rm --cached'.
