@@ -58,33 +58,81 @@ end
 
 # B. Given the following data structure:
 users = {
-    "Jonathan" => {
-      :twitter => "jonnyt",
-      :favourite_numbers => [12, 42, 75, 12, 5],
-      :home_town => "Stirling",
-      :pets => {
-        "fluffy" => :cat,
-        "fido" => :dog,
-        "spike" => :dog
-      }
-    },
-    "Erik" => {
-      :twitter => "eriksf",
-      :favourite_numbers => [8, 12, 24],
-      :home_town => "Linlithgow",
-      :pets => {
-        "nemo" => :fish,
-        "kevin" => :fish,
-        "spike" => :dog,
-        "rupert" => :parrot
-      }
-    },
-    "Avril" => {
-      :twitter => "bridgpally",
-      :favourite_numbers => [12, 14, 85, 88],
-      :home_town => "Dunbar",
-      :pets => {
-        "colin" => :snake
-      }
-    },
+  "Jonathan" => {
+    :twitter => "jonnyt",
+    :favourite_numbers => [12, 42, 75, 12, 5],
+    :home_town => "Stirling",
+    :pets => {
+      "fluffy" => :cat,
+      "fido" => :dog,
+      "spike" => :dog
+    }
+  },
+  "Erik" => {
+    :twitter => "eriksf",
+    :favourite_numbers => [8, 12, 24],
+    :home_town => "Linlithgow",
+    :pets => {
+      "nemo" => :fish,
+      "kevin" => :fish,
+      "spike" => :dog,
+      "rupert" => :parrot
+    }
+  },
+  "Avril" => {
+    :twitter => "bridgpally",
+    :favourite_numbers => [12, 14, 85, 88],
+    :home_town => "Dunbar",
+    :pets => {
+      "colin" => :snake
+    }
+  },
+}
+
+# 1. Get Jonathan's Twitter handle (i.e. the string "jonnyt")
+p "Answer 1: "
+p users["Jonathan"][:twitter]
+
+# 2. Get Erik's hometown
+p "Answer 2: "
+p users["Erik"][:home_town]
+
+# 3. Get the array of Erik's favourite numbers
+p "Answer 3: "
+p users["Erik"][:favourite_numbers]
+
+# 4. Get the type of Avril's pet Colin
+p "Answer 4: "
+p users["Avril"][:pets]["colin"]
+
+# 5. Get the smallest of Erik's favourite numbers
+p "Answer 5: "
+sorted_numbers = users["Erik"][:favourite_numbers]
+p sorted_numbers.first()
+
+# 6. Add the number 7 to Erik's favourite numbers
+p "Answer 6: "
+users["Erik"][:favourite_numbers] << 7
+p users["Erik"][:favourite_numbers]
+
+# 7. Change Erik's hometown to Edinburgh
+p "Answer 7: "
+users["Erik"][:home_town] = "Edinburgh"
+p users["Erik"][:home_town]
+
+# 8. Add a pet dog to Erik called "Fluffy"
+p "Answer 8: "
+users["Erik"][:pets]["Fluffy"] = :dog
+p users["Erik"][:pets]
+
+# 9. Add yourself to the users hash
+p "Answer 9: "
+users["Paul"] = {
+  twitter: "stewartpaul22",
+  favourite_numbers: [ 2, 3, 5, 7 ],
+  home_town: "Glasgow",
+  pets: {
+    "Lebowski" => :cat
   }
+}
+p users["Paul"]
