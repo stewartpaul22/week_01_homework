@@ -42,7 +42,10 @@ p "Answer 7: "
 p stops.length
 
 # 8. How many ways can we return "Falkirk High" from the array?
-#
+p "Answer 8: "
+p "1. #{stops[2]}"
+p "2. #{stops[-5]}"
+p "3. #{stops.at(2)}"
 
 # 9. Reverse the positions of the stops in the array
 stops.reverse!()
