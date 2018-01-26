@@ -72,8 +72,9 @@ end
 # test_sell_pet_to_customer__pet_found
 def sell_pet_to_customer(pet_shop, pet, customer)
   # add pet to customer's pets array
-
+  customer[:pets] << pet
   # increase pets sold amount
-
-  # check that total_cash increase by 900
+  pet_shop[:admin][:pets_sold] += 1
+  # increase total_cash by pet price
+  pet_shop[:admin][:total_cash] += pet[:price]
 end
