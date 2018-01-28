@@ -71,10 +71,11 @@ end
 # same method as above
 # test_sell_pet_to_customer__pet_found
 def sell_pet_to_customer(pet_shop, pet, customer)
-  # add pet to customer's pets array
-  customer[:pets] << pet
-  # increase pets sold amount
-  pet_shop[:admin][:pets_sold] += 1
-  # increase total_cash by pet price
-  pet_shop[:admin][:total_cash] += pet[:price]
+  if (pet != nil)
+    add_pet_to_customer(customer, pet)
+    increase_pets_sold(pet_shop, customer[:pets].count())
+    add_or_remove_cash(pet_shop, pet[:price])
+  end
 end
+# test_sell_pet_to_customer__pet_not_found
+# same method as above
